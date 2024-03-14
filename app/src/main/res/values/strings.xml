@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Only</string>
+    <string name="menu_table_1">首页</string>
+    <string name="menu_table_2">课程</string>
+    <string name="menu_table_3">网红视频</string>
+    <string name="menu_table_4">我的</string>
+</resources>

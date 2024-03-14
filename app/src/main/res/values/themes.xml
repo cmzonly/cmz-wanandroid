@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Only" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryDark">@color/purple_200</item>
+        <item name="colorAccent">@color/purple_200</item>
+        <item name="android:navigationBarColor">@color/purple_200</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.Only" parent="Base.Theme.Only" />
+
+    <!--BottomNavigationView选项卡文字大小主题-->
+    <style name="myNavigationDrawerStyle" >
+        <item name="android:textSize">10sp</item>
+    </style>
+</resources>

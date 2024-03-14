@@ -1,0 +1,35 @@
+if (rootProject.ext.isModule){
+    apply plugin :'com.android.application'
+}else{
+    apply plugin : 'com.android.library'
+}
+apply from : "${rootProject.rootDir}/buildconfig.gradle"
+
+android {
+    namespace rootProject.ext.applicationId.module_search
+    resourcePrefix rootProject.ext.resourcePrefix.module_search
+
+
+    defaultConfig {
+        if (rootProject.ext.isModule) {
+            applicationId rootProject.ext.applicationId.module_search
+        }
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isModule) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+
+        }
+
+    }
+}
+
+dependencies {
+
+    implementation project(":common_lib")
+}

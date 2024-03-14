@@ -1,0 +1,8 @@
+rootProject.name = "Only"
+include(":app")
+include(':module_home')
+include(':module_web')
+include(':module_login')
+include(":common_lib")
+include ':module_d'
+include ':module_search'

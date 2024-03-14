@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetDropDown">
+    <value>
+      <entry key="app">
+        <State />
+      </entry>
+      <entry key="common_lib">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\10635\.android\avd\Pixel_6_API_29.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-02-27T06:17:28.210586600Z" />
+        </State>
+      </entry>
+      <entry key="module_a">
+        <State />
+      </entry>
+      <entry key="module_b">
+        <State />
+      </entry>
+      <entry key="module_c">
+        <State />
+      </entry>
+      <entry key="module_d">
+        <State />
+      </entry>
+      <entry key="module_search">
+        <State />
+      </entry>
+    </value>
+  </component>
+</project>

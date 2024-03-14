@@ -1,0 +1,36 @@
+if (rootProject.ext.isModule){
+    apply plugin:'com.android.application'
+}else{
+    apply plugin:'com.android.library'
+}
+apply from: "${rootProject.rootDir}/buildconfig.gradle"
+def daili = rootProject.ext
+
+android {
+    namespace daili.applicationId.module_b
+
+
+    defaultConfig {
+        if (daili.isModule){
+            applicationId daili.applicationId.module_b
+
+        }
+
+    }
+
+    sourceSets{
+        main{
+            if (daili.isModule){
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }else{
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation project(":common_lib")
+}

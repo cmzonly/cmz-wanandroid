@@ -1,0 +1,23 @@
+if (rootProject.ext.isModule) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply from: "$rootProject.rootDir/buildconfig.gradle"
+
+android {
+    namespace rootProject.ext.applicationId.module_d
+
+
+    defaultConfig {
+        if (rootProject.ext.isModule) {
+            applicationId rootProject.ext.applicationId.module_d
+        }
+
+    }
+
+}
+
+dependencies {
+    implementation project(":common_lib")
+}

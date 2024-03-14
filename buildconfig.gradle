@@ -1,0 +1,68 @@
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-kapt'
+def dl = rootProject.ext
+android {
+    compileSdk dl.android.compileSdk
+
+    defaultConfig {
+        minSdk dl.android.minSdk
+        targetSdk dl.android.targetSdk
+        versionCode dl.android.versionCode
+        versionName dl.android.versionName
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+    }
+
+//    //ARouter配置
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+dependencies {
+    implementation "io.insert-koin:koin-android:3.4.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.7.0"
+    implementation 'io.github.youth5201314:banner:2.2.2'
+    /**适配器*/
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    /**图片加载*/
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.7.20"
+    /**带进度条webview*/
+    implementation 'com.just.agentweb:agentweb:4.1.3' // (必选)
+    //ARouter
+    implementation "com.alibaba:arouter-api:1.5.2"
+    kapt 'com.alibaba:arouter-compiler:1.5.2'
+    //mmkv
+    implementation 'com.tencent:mmkv:1.2.10'
+    implementation 'com.lxj:xpopup:1.9.0'
+
+}
